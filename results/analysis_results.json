@@ -1,0 +1,150 @@
+{
+  "mincer_equation": {
+    "coefficients": {
+      "const": 2.4079379954991915,
+      "education": 0.14249278806828705,
+      "experience": 0.034474851988515326,
+      "experience_sq": -0.00027724369148251224,
+      "gender_discrimination": 1.4619564405894714,
+      "education_manufacturing": -0.6902782173398849,
+      "education_urban": 0.6837500292364205,
+      "gender_education_interaction": -0.9042897468895031,
+      "gender_experience_interaction": -0.03483935593559667,
+      "county_education_gender": -0.9042897468894818
+    },
+    "p_values": {
+      "const": 2.3540329662170886e-30,
+      "education": 0.7212445276301964,
+      "experience": 0.009863008637745651,
+      "experience_sq": 0.3038545206781258,
+      "gender_discrimination": 0.2737919469031773,
+      "education_manufacturing": 0.15256104143527693,
+      "education_urban": 5.4754513373927466e-05,
+      "gender_education_interaction": 0.5394999222715943,
+      "gender_experience_interaction": 0.28766467416147024,
+      "county_education_gender": 0.5394999222716035
+    },
+    "std_errors": {
+      "const": 0.21030200607756133,
+      "education": 0.3993676674607768,
+      "experience": 0.013359262486033661,
+      "experience_sq": 0.00026963915758261103,
+      "gender_discrimination": 1.3358864337740217,
+      "education_manufacturing": 0.4825285880710821,
+      "education_urban": 0.16948223484105188,
+      "gender_education_interaction": 1.473818243566482,
+      "gender_experience_interaction": 0.03276658612151203,
+      "county_education_gender": 1.4738182435664808
+    },
+    "r_squared": 0.55487029641951,
+    "adj_r_squared": 0.5157380147860604,
+    "n_observations": 100,
+    "f_statistic": 11.854247292995908,
+    "f_pvalue": 1.965950386590544e-11
+  },
+  "gender_gap_analysis": {
+    "coefficients": {
+      "const": 0.11991461832723686,
+      "education_level": 0.04951626759031433,
+      "manufacturing_share": -0.07082039886572639,
+      "urban_share": -0.0008148389089485293,
+      "experience": -9.911495930669395e-06,
+      "population": 2.734389729825495e-07
+    },
+    "p_values": {
+      "const": 0.0002670026087213118,
+      "education_level": 0.30700918319293957,
+      "manufacturing_share": 0.20227656904397073,
+      "urban_share": 0.9635753205791804,
+      "experience": 0.9905134293280567,
+      "population": 0.5238322147349073
+    },
+    "std_errors": {
+      "const": 0.03289500589991575,
+      "education_level": 0.048473230615852826,
+      "manufacturing_share": 0.05554138944661757,
+      "urban_share": 0.01784288795485691,
+      "experience": 0.0008336039990863165,
+      "population": 4.2895798389668685e-07
+    },
+    "r_squared": 0.05647371337700391,
+    "n_observations": 100
+  },
+  "did_analysis": {
+    "treatment_effect": 0.011926529602553044,
+    "treatment_se": 0.0032358562984689198,
+    "treatment_pvalue": 0.00022803779219611914,
+    "r_squared": 0.056765235169467076,
+    "n_observations": 100
+  },
+  "iv_analysis": {
+    "first_stage": {
+      "f_statistic": 3.4823581426662016,
+      "r_squared": 0.09446681968051351
+    },
+    "second_stage": {
+      "education_coefficient": 0.043726904815685655,
+      "education_se": 0.21256918446969703,
+      "education_pvalue": 0.8370200270099751
+    }
+  },
+  "diagnostics": {
+    "vif": {
+      "Variable": {
+        "0": "const",
+        "1": "education",
+        "2": "experience",
+        "3": "experience_sq",
+        "4": "gender_discrimination",
+        "5": "education_manufacturing",
+        "6": "education_urban",
+        "7": "gender_education_interaction",
+        "8": "gender_experience_interaction",
+        "9": "county_education_gender"
+      },
+      "VIF": {
+        "0": 501.39021834587805,
+        "1": 12.228296942267201,
+        "2": 63.95178241156423,
+        "3": 63.383328253492444,
+        "4": 29.33673340583232,
+        "5": 1.4458097093661852,
+        "6": 1.5946341911038493,
+        "7": Infinity,
+        "8": 23.491797998615752,
+        "9": Infinity
+      }
+    },
+    "breusch_pagan": {
+      "statistic": 8.384321470892797,
+      "p_value": 0.49592718577302264,
+      "heteroskedastic": false
+    },
+    "jarque_bera": {
+      "statistic": 3.0040316384703165,
+      "p_value": 0.22268082312292603,
+      "normal": true
+    }
+  },
+  "economic_interpretation": {
+    "elasticities": {
+      "education": 0.0016103373919214145,
+      "gender_gap": 0.007420945957641527
+    },
+    "economic_magnitudes": {
+      "education_10pp_effect": 0.014249278806828705,
+      "manufacturing_10pp_effect": -0.0690278217339885
+    },
+    "welfare": {
+      "deadweight_loss": 16.668249835468902,
+      "deadweight_loss_per_capita": 0.166682498354689,
+      "competitive_wage": 28.18968777155287,
+      "discriminatory_wage": 25.626988883229878
+    },
+    "policy_implications": {
+      "education_policy": "A 10 percentage point increase in college attainment reduces gender gaps by 1.4%",
+      "manufacturing_policy": "A 10 percentage point increase in manufacturing increases gender gaps by -6.9%",
+      "welfare_gain": "Eliminating discrimination would generate $17 in welfare gains"
+    }
+  }
+}

@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 ### Complete Economic Analysis
 ```bash
-python main.py
+python analysis_main.py
 ```
 Runs the full economic analysis pipeline including theoretical framework, identification strategies, and policy simulations.
 
@@ -77,41 +77,6 @@ streamlit run streamlit_app.py
 │   ├── economic_analysis.py  # Economic framework implementation
 │   └── visualization.py      # Plotting and mapping
 ├── streamlit_app.py          # Interactive web application
-├── main.py                   # Complete analysis pipeline
+├── analysis_main.py          # Complete analysis pipeline
 └── requirements.txt          # Python dependencies
 ```
-
-## Key Economic Findings
-
-- **Education Elasticity**: Estimated returns to education across counties
-- **Discrimination Magnitude**: Economic cost of wage discrimination
-- **Policy Effects**: Simulated impacts of minimum wage and education policies
-- **Spatial Heterogeneity**: County-level variation in wage determination
-- **Welfare Implications**: Deadweight loss and distributional effects
-
-## Research Contributions
-
-1. **Spatial Analysis**: First comprehensive county-level wage gap analysis within a state
-2. **Policy Relevance**: Local policy simulation framework with economic magnitudes
-3. **Structural Interpretation**: Move beyond descriptive statistics to causal inference
-4. **Identification Strategy**: Multiple approaches including IV and natural experiments
-5. **Theoretical Foundation**: Grounded in established economic theory
-
-## Data Sources
-
-- **American Community Survey (ACS) 2022**: Individual and household data
-- **U.S. Census Bureau API**: Public access, no registration required
-- **Illinois County Boundaries**: Geographic and demographic data
-- **Policy Variables**: Minimum wage, education funding, anti-discrimination laws
-
-## Academic Context
-
-This research contributes to the economics literature on:
-- **Labor Economics**: Wage determination and discrimination
-- **Urban Economics**: Spatial wage variation and local labor markets
-- **Public Economics**: Policy evaluation and welfare analysis
-- **Applied Econometrics**: Identification strategies and causal inference
-
-## License
-
-MIT License - see LICENSE file for details 
