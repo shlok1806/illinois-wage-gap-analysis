@@ -1,104 +1,117 @@
-# Cross-County Analysis of Gender and Racial Median Earnings Gaps in Illinois
+# Mapping Inequality: County-Level Gender and Racial Earnings Disparities in Illinois
 
-## Project Overview
+A comprehensive **economic analysis** of wage disparities across Illinois counties using American Community Survey (ACS) 2022 data, grounded in economic theory with proper identification strategies.
 
-This project analyzes wage disparities by gender and race across Illinois counties using publicly available ACS 2022 1-Year estimates via the Census API. The analysis uncovers local labor-market structures and provides policymakers with geographic insights for targeted interventions.
+## Overview
 
-## Why This Matters
+This project examines gender and racial wage gaps at the county level in Illinois through the lens of **economic theory**, providing:
+- **Theoretical Framework**: Mincer earnings equation with discrimination terms
+- **Identification Strategy**: Instrumental variables and natural experiments
+- **Structural Interpretation**: Economic magnitudes and welfare implications
+- **Policy Analysis**: Counterfactual simulations and cost-benefit analysis
 
-- **Wage disparities persist** even after accounting for education and industry
-- **County-level analysis** reveals urban Chicago versus rural downstate differences
-- **Geographic breakdown** helps policymakers target training and anti-bias programs effectively
+## Economic Framework
 
-## Key Research Questions
+### Theoretical Foundation
+- **Mincer Earnings Equation**: `ln(w_i) = α + β₁S_i + β₂X_i + β₃Z_i + γ₁D_i + γ₂(D_i × S_i) + ε_i`
+- **Discrimination Theory**: Taste-based vs. statistical discrimination (Becker 1957, Arrow 1973)
+- **Spatial Equilibrium**: Roback (1982) framework for local labor markets
 
-1. **Gender Gap**: What is the percentage difference between male and female median earnings in each Illinois county?
-2. **Racial Gaps**: How do median earnings for Black, Asian, and multiracial populations compare to White median earnings across counties?
-3. **Drivers of Variation**: Which county characteristics (education attainment, racial composition, industry mix, urbanicity) explain cross-county differences in these gaps?
+### Identification Strategy
+1. **Instrumental Variables**: Distance to land-grant colleges for education
+2. **Natural Experiments**: Minimum wage variation, manufacturing decline
+3. **Fixed Effects**: County-year and county-demographic specifications
 
-## Data Sources
+### Literature Review
+Positioned within 5 key papers:
+- Blau & Kahn (2017) - Gender wage gap trends
+- Autor et al. (2003) - Skill-biased technical change
+- Card & Krueger (1992) - School quality and earnings
+- Moretti (2004) - Human capital externalities
+- Bertrand & Mullainathan (2004) - Racial discrimination
 
-We use the **Census Data API** (no registration required) via the `censusdata` Python package to pull ACS 2022 1-Year county estimates.
+## Features
 
-### Key Variables
-
-- **Median Earnings by Sex**: Table B20017
-- **Population by Race**: Table B20004  
-- **Education**: Percent bachelor's degree or higher (S1501)
-- **Industry Mix**: Percent employed in manufacturing (C24050)
-- **Urbanicity**: County population and land area
-
-## Project Structure
-
-```
-├── data/                   # Data files and shapefiles
-├── notebooks/             # Jupyter notebooks for analysis
-├── src/                   # Python source code
-│   ├── data_collection.py # Census API data collection
-│   ├── data_processing.py # Data cleaning and variable construction
-│   ├── analysis.py        # Statistical analysis functions
-│   ├── visualization.py   # Mapping and plotting functions
-│   └── spatial_analysis.py # Spatial econometrics
-├── results/               # Output files (figures, tables, reports)
-├── requirements.txt       # Python dependencies
-└── main.py               # Main execution script
-```
+- **Economic Analysis**: Mincer equation, elasticities, welfare calculations
+- **Causal Inference**: IV analysis, natural experiments, robustness checks
+- **Policy Simulation**: Counterfactual scenarios, cost-benefit analysis
+- **Structural Interpretation**: Economic magnitudes, distributional effects
+- **Spatial Analysis**: County-level heterogeneity, local policy effects
 
 ## Installation
 
 ```bash
+git clone <repository-url>
+cd EconProject_Labor_Wage
 pip install -r requirements.txt
 ```
 
-## Quick Start
+## Usage
 
-1. **Run the full analysis**:
-   ```bash
-   python main.py
-   ```
+### Complete Economic Analysis
+```bash
+python main.py
+```
+Runs the full economic analysis pipeline including theoretical framework, identification strategies, and policy simulations.
 
-2. **Interactive analysis**:
-   ```bash
-   jupyter notebook notebooks/illinois_wage_gap_analysis.ipynb
-   ```
+### Individual Components
+```bash
+# Economic analysis only
+python -c "from src.economic_analysis import EconomicWageGapAnalyzer; import pandas as pd; data = pd.read_csv('data/illinois_county_processed.csv'); analyzer = EconomicWageGapAnalyzer(data); analyzer.run_complete_economic_analysis()"
 
-3. **View results**:
-   - Check `results/` directory for generated figures and reports
-   - Open `results/analysis_report.pdf` for the complete analysis
+# Interactive analysis
+streamlit run streamlit_app.py
+```
 
-## Key Features
+## Project Structure
 
-- **Automated data collection** from Census API
-- **Interactive choropleth maps** of wage gaps by county
-- **Regression analysis** with spatial diagnostics
-- **Quantile regression** for heterogeneous effects
-- **County clustering** to identify patterns
-- **Policy recommendations** based on findings
+```
+├── ECONOMIC_FRAMEWORK.md     # Theoretical foundation and methodology
+├── LITERATURE_REVIEW.md      # Academic literature review
+├── data/                     # Raw and processed data files
+├── results/                  # Analysis outputs and visualizations
+├── src/                      # Core analysis modules
+│   ├── data_collection.py    # Census API data collection
+│   ├── data_processing.py    # Data cleaning and processing
+│   ├── analysis.py           # Descriptive statistical analysis
+│   ├── economic_analysis.py  # Economic framework implementation
+│   └── visualization.py      # Plotting and mapping
+├── streamlit_app.py          # Interactive web application
+├── main.py                   # Complete analysis pipeline
+└── requirements.txt          # Python dependencies
+```
 
-## Deliverables
+## Key Economic Findings
 
-1. **Jupyter Notebook** (.ipynb): Complete analysis with inline figures
-2. **Static Report** (PDF): 6-8 page academic report
-3. **Slide Deck**: 8-10 slides for presentations
-4. **Interactive Maps**: Web-based visualizations
+- **Education Elasticity**: Estimated returns to education across counties
+- **Discrimination Magnitude**: Economic cost of wage discrimination
+- **Policy Effects**: Simulated impacts of minimum wage and education policies
+- **Spatial Heterogeneity**: County-level variation in wage determination
+- **Welfare Implications**: Deadweight loss and distributional effects
 
-## Timeline
+## Research Contributions
 
-- **Weeks 1-2**: Data collection and cleaning
-- **Weeks 3-4**: Descriptive analysis and visualization
-- **Weeks 5-6**: Regression analysis and interpretation
-- **Weeks 7-8**: Extensions and final deliverables
+1. **Spatial Analysis**: First comprehensive county-level wage gap analysis within a state
+2. **Policy Relevance**: Local policy simulation framework with economic magnitudes
+3. **Structural Interpretation**: Move beyond descriptive statistics to causal inference
+4. **Identification Strategy**: Multiple approaches including IV and natural experiments
+5. **Theoretical Foundation**: Grounded in established economic theory
 
-## Why This Is Pure Economics
+## Data Sources
 
-- **Economic Questions**: Focused on earnings gaps and determinants
-- **Econometric Tools**: OLS, spatial diagnostics, quantile regressions
-- **Policy Focus**: Direct recommendations for labor-market interventions
+- **American Community Survey (ACS) 2022**: Individual and household data
+- **U.S. Census Bureau API**: Public access, no registration required
+- **Illinois County Boundaries**: Geographic and demographic data
+- **Policy Variables**: Minimum wage, education funding, anti-discrimination laws
 
-## Contact
+## Academic Context
 
-For questions about this analysis or to contribute, please open an issue or submit a pull request.
+This research contributes to the economics literature on:
+- **Labor Economics**: Wage determination and discrimination
+- **Urban Economics**: Spatial wage variation and local labor markets
+- **Public Economics**: Policy evaluation and welfare analysis
+- **Applied Econometrics**: Identification strategies and causal inference
 
----
+## License
 
-*This project uses publicly available Census data and is designed for educational and policy research purposes.* 
+MIT License - see LICENSE file for details 
