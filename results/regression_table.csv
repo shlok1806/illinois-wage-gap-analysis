@@ -1,0 +1,3 @@
+Model,Observations,R-squared,Adj. R-squared,pct_bach_coef,pct_bach_se,pct_black_coef,pct_black_se,pct_asian_coef,pct_asian_se,pct_multi_coef,pct_multi_se,log_pop_coef,log_pop_se,pct_manuf_coef,pct_manuf_se,median_age_centered_coef,median_age_centered_se,log_median_income_coef,log_median_income_se,poverty_pct_coef,poverty_pct_se,pct_bach_black_coef,pct_bach_black_se,urban_black_coef,urban_black_se
+Baseline,26,0.427,0.246,1.190,(1.517),0.680,(0.477),-3.541,(2.326),7.650*,(3.947),12.026,(13.144),0.065,(0.067),,,,,,,,,,
+Extended,26,0.574,0.240,-1.551,(2.085),-41.943,(31.125),-3.730,(2.506),2.778,(4.595),-17.547,(28.663),0.140,(0.086),-1.791,(5.903),68.301,(47.697),15.782,(30.377),0.357,(0.208),2.671,(2.563)
